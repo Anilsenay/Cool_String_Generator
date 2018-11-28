@@ -11,8 +11,10 @@ public class RandomCharacterGenerator{
 		if(choice == 1)	{
                 	System.out.print("How many characters do you want? : ");
                 	int longOfChars = in.nextInt();
+			System.out.print("Select the speed (1 = slow, 2 = normal, 3 = faster) : ");
+			int speed = in.nextInt();
                 	System.out.println();
-			randomGenerator(longOfChars);
+			randomGenerator(longOfChars, speed);
 			System.out.println();
 			stringGenerator("CODED BY ANIL ŞENAY");
 		}
@@ -26,12 +28,12 @@ public class RandomCharacterGenerator{
 		}
 	}
 
-	public static void randomGenerator (int longOfChars) throws InterruptedException{
+	public static void randomGenerator (int longOfChars, int speed) throws InterruptedException{
 		for(int j = 0; j < longOfChars; j++){
 			for(int i = 0; i < 100; i++){
 
 				System.out.print((char)(Math.random()*50+49));
-				Thread.sleep(10);
+				Thread.sleep((4-speed) * (long)2.5);
 				if(i < 99){
 				System.out.print("\b");
 				}
@@ -44,7 +46,7 @@ public class RandomCharacterGenerator{
                         for(int i = 0; i < 100; i++){
 				if(i<99){
                                 System.out.print((char)(Math.random()*50+49));
-                                Thread.sleep(3);
+                                Thread.sleep(2);
                                 }
 				if(i < 99){
                                 System.out.print("\b");
